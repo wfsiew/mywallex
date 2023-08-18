@@ -15,6 +15,7 @@ export class AppController {
   @Post('backend/backend_response')
   async Webhook(@Body() data: WallexWebhookDto) {
     console.log('called backend response');
+    console.log(data);
     return {
       success: 'ok',
       data
