@@ -11,6 +11,14 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Get('backend/backend_response')
+  async WebhookTest() {
+    console.log('log here');
+    return {
+      success: 'ok'
+    }
+  }
+
   @HttpCode(HttpStatus.OK)
   @Post('backend/backend_response')
   async Webhook(@Body() data: WallexWebhookDto) {
